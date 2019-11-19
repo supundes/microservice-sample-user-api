@@ -16,25 +16,25 @@ public class Debug {
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     String list() {
-        return "{ method : \"debug list user called successfully\"}";
+        return "{ method : \"debug list user called successfully. Test admin credentials are admin:Pa$$w0rd\"}";
     }
 
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
     String add() {
-        return "{ method : \"debug add user called successfully\"}";
+        return "{ method : \"debug add user called successfully. Test admin credentials are admin:Pa$$w0rd\"}";
     }
 
     @RequestMapping(method = RequestMethod.PUT)
     @ResponseBody
     String update() {
-        return "{ method : \"debug update user called successfully\"}";
+        return "{ method : \"debug update user called successfully. Test admin credentials are admin:Pa$$w0rd\"}";
     }
 
     @RequestMapping(method = RequestMethod.DELETE)
     @ResponseBody
     String delete() {
-        return "{ method : \"debug delete user called successfully\"}";
+        return "{ method : \"debug delete user called successfully. Test admin credentials are admin:Pa$$w0rd\"}";
     }
 
 }
