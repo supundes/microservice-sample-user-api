@@ -2,37 +2,37 @@ package com.wso2.microservice;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+
 
 @Controller
+
 @EnableAutoConfiguration
 @RequestMapping("api/user")
 public class UserAPI {
 
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
-    String list() {
-        return "{ method : \"list user called successfully\"}";
+    String list(@RequestHeader(required = false, value = JWTUtil.JWT_HEADER) String jwt, @RequestParam(required = false, value = "data") String data) {
+        return "{ method : \"list user called successfully\", jwt: \"" + jwt + "\", data: \"" + data + "\"}";
     }
 
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
-    String add() {
-        return "{ method : \"add user called successfully\"}";
+    String add(@RequestHeader(required = false, value = JWTUtil.JWT_HEADER) String jwt, @RequestParam(required = false, value = "data") String data) {
+        return "{ method : \"add user called successfully\", jwt: \"" + jwt + "\", data: \"" + data + "\"}";
     }
 
     @RequestMapping(method = RequestMethod.PUT)
     @ResponseBody
-    String update() {
-        return "{ method : \"update user called successfully\"}";
+    String update(@RequestHeader(required = false, value = JWTUtil.JWT_HEADER) String jwt, @RequestParam(required = false, value = "data") String data) {
+        return "{ method : \"update user called successfully\", jwt: \"" + jwt + "\", data: \"" + data + "\"}";
     }
 
     @RequestMapping(method = RequestMethod.DELETE)
     @ResponseBody
-    String delete() {
-        return "{ method : \"delete user called successfully\"}";
+    String delete(@RequestHeader(required = false, value = JWTUtil.JWT_HEADER) String jwt, @RequestParam(required = false, value = "data") String data) {
+        return "{ method : \"delete user called successfully\", jwt: \"" + jwt + "\", data: \"" + data + "\"}";
     }
 
 }
