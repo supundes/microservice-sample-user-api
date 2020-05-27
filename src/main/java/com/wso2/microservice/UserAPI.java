@@ -14,6 +14,7 @@ public class UserAPI {
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     String list(@RequestHeader(required = false, value = JWTUtil.JWT_HEADER) String jwt, @RequestParam(required = false, value = "data") String data) {
+        System.out.println("DATA = " + data);
         return "{ method : \"list user called successfully\", jwt: \"" + jwt + "\", data: \"" + data + "\"}";
     }
 
